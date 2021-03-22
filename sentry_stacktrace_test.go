@@ -6,7 +6,7 @@ import (
 
 	"github.com/getsentry/raven-go"
 	pkgerrors "github.com/pkg/errors"
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 )
 
 func TestSentryStacktrace(t *testing.T) {
@@ -49,7 +49,7 @@ func TestSentryStacktrace(t *testing.T) {
 			t.Error("Frame should not be identified as in_app without prefixes")
 		}
 
-		hook.StacktraceConfiguration.InAppPrefixes = []string{"github.com/sirupsen/logrus"}
+		hook.StacktraceConfiguration.InAppPrefixes = []string{"github.com/Sirupsen/logrus"}
 		hook.StacktraceConfiguration.Context = 2
 		hook.StacktraceConfiguration.Skip = 2
 
@@ -60,7 +60,7 @@ func TestSentryStacktrace(t *testing.T) {
 			t.Error("Stacktrace should not be empty")
 		}
 		lastFrame = packet.Stacktrace.Frames[stacktraceSize-1]
-		expectedFilename := "github.com/sirupsen/logrus/entry.go"
+		expectedFilename := "github.com/Sirupsen/logrus/entry.go"
 		if lastFrame.Filename != expectedFilename {
 			t.Errorf("File name should have been %s, was %s", expectedFilename, lastFrame.Filename)
 		}

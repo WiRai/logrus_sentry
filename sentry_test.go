@@ -17,7 +17,7 @@ import (
 
 	"github.com/getsentry/raven-go"
 	pkgerrors "github.com/pkg/errors"
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 )
 
